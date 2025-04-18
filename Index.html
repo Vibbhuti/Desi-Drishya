@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Desi Drishya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Load Header -->
+    <div id="header"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("header").innerHTML = data);
+    </script>
+
+    <div class="top-section">
+        <img src="../Categories/desi drishya.jpg" alt="Desi Drishya Logo" class="full-logo">
+    </div>
+
+    <div class="content-wrapper">
+        <!-- Left Side: Image & Video -->
+        <div class="media-container">
+            <div class="image-container">
+                <img src="Categories/diversity.jpg" alt="Desi Drishya Image">
+            </div>
+            <div class="video-container">
+                <video autoplay muted controls>
+                    <source src="Categories/INDIA.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- Right Side: Text Content -->
+        <div class="text-content">
+            <p class="special-text">
+                Embark on a visual journey through the heart of India, where ancient traditions intertwine with modern marvels, and where every corner whispers tales of a rich and diverse heritage.
+
+            </p>
+            
+            <h3>A Kaleidoscope of Culture</h3>
+            <p>From the majestic Taj Mahal, a monument of eternal love, to the vibrant hues of Holi, a festival of colors, India's heritage is a breathtaking spectacle. Explore the intricate carvings of ancient temples, the vibrant dance forms that narrate stories of gods and goddesses, and the soulful melodies of traditional music that transport you to another realm.
+            </p>
+
+            <h3>A Symphony of Flavors</h3>
+            <p>India's culinary landscape is a tantalizing symphony of flavors, where spices dance on your palate and every dish tells a story. Indulge in the fiery curries of the south, the succulent kebabs of the north, and the aromatic biryanis that tantalize your senses.
+            </p>
+
+            <h3>A Land of Artistic Expression</h3>
+            <p>India's artistic heritage is a treasure trove of creativity, where skilled artisans craft exquisite masterpieces. From the intricate embroidery of Kashmir to the vibrant paintings of Rajasthan, India's artistic expressions are a testament to the country's rich cultural tapestry.
+            </p>
+
+            <h3>A Tapestry of Traditions</h3>
+            <p>India is a land of diverse traditions, where each community celebrates its unique heritage with vibrant festivals and colorful rituals. Witness the grandeur of Diwali, the festival of lights, the joyous celebration of Holi, and the soulful melodies of Qawwali music.
+            </p>
+
+            <h3>Discover the Essence of India</h3>
+            <p>Desi Dhrishya invites you to explore the heart and soul of India through its vibrant visuals. Immerse yourself in the kaleidoscope of colors, savor the symphony of flavors, and witness the artistic expressions that have captivated the world for centuries.
+                </p>
+
+            <h3>A Visual Odyssey Awaits</h3>
+            <p>Prepare to be enchanted by the visual tapestry of India, where every image tells a story, every color evokes a feeling, and every tradition celebrates the rich heritage of this extraordinary land.
+            </p>
+
+            <p class="bold-last">Welcome to Desi Drishya, your gateway to the visual heart of India.</p>
+        </div>
+    </div>
+
+    <!-- Load Footer -->
+    <div id="footer"></div>
+    <script>
+        fetch("../../footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+
+</body>
+</html>

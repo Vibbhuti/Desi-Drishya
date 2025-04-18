@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories & India Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #F5EFE0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2%;
+            margin-top: 2%;
+            width: 100%;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 50%;
+        }
+
+        .box {
+            width: 30%;
+            height: 20vh;
+            margin: 2%;
+            border-radius: 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .box h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 1.2vw;
+            color: #fff;
+        }
+
+        .map-container {
+            width: 45%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 2%;
+            position: relative;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: #000;
+            color: #fff;
+            padding: 0.5vw;
+            border-radius: 0.5vw;
+            font-size: 1vw;
+            display: none;
+        }
+
+        #india-map {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-image: url('Categories/india map.png'); /* Replace with your SVG map */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .jammu-kashmir {
+        width: 73px;  /* Set width */
+        height: 60px; /* Set height (same as width) */
+        background-color: blue; /* Add color */
+        position:absolute;
+        top:3%;
+        left:22%;
+        opacity: 0%;
+    }
+
+.andhra-pradesh {
+    width: 54px;
+    height: 70px;
+    background-color: rgb(27, 243, 31);
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    opacity:0%;
+}
+
+.arunachal-pradesh {
+    width: 60px;
+    height: 20px;
+    background-color: rgb(247, 127, 52);
+    position: absolute;
+    top: 25%;
+    left: 79%;
+    opacity: 0%;
+}
+
+.assam {
+    width: 30px;
+    height: 15px;
+    background-color: rgb(219, 232, 40);
+    position: absolute;
+    top: 32%;
+    left: 76%;
+    opacity: 0%;
+}
+
+.bihar {
+    width: 56px;
+    height: 34px;
+    background-color: rgb(103, 62, 4);
+    position: absolute;
+    top: 34%;
+    left: 52%;
+    opacity: 0%;
+}
+
+.chhattisgarh {
+    width: 30px;
+    height: 90px;
+    background-color: rgb(39, 120, 182);
+    position: absolute;
+    top: 43%;
+    left: 42%;
+    transform: rotate(26deg);
+    opacity: 0%;
+}
+
+.goa {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(185, 49, 239);
+    position: absolute;
+    top: 69%;
+    left: 17%;
+    opacity: 0%;
+}
+
+.gujarat {
+    width: 58px;
+    height: 55px;
+    background-color: rgb(236, 125, 195);
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    opacity: 0%;
+}
+
+.haryana {
+    width: 32px;
+    height: 30px;
+    background-color: rgb(213, 60, 60);
+    position: absolute;
+    top: 23%;
+    left: 24%;
+    opacity: 0%;
+}
+
+.himachal-pradesh {
+    width: 35px;
+    height: 40px;
+    background-color: rgb(99, 105, 7);
+    position: absolute;
+    top: 14%;
+    left: 27%;
+    transform: rotate(85deg);
+    opacity: 0%;
+}
+
+.jharkhand {
+    width: 30px;
+    height: 42px;
+    background-color: rgb(96, 30, 30);
+    position: absolute;
+    top: 40%;
+    left: 52%;
+    opacity: 0%;
+}
+
+.karnataka {
+    width: 40px;
+    height: 87px;
+    background-color: rgb(85, 102, 157);
+    position: absolute;
+    top: 65%;
+    left: 20.5%;
+    transform: rotate(170deg);
+    opacity: 0%;
+}
+
+.kerala {
+    width: 15px;
+    height: 69px;
+    background-color: rgb(74, 3, 135);
+    position: absolute;
+    top: 80%;
+    left: 24%;
+    transform: rotate(160deg);
+    opacity: 0%;
+}
+
+.madhya-pradesh {
+    width: 110px;
+    height: 45px;
+    background-color: rgb(106, 5, 96);
+    position: absolute;
+    top: 42%;
+    left: 22%;
+    opacity: 0%;
+}
+
+.maharashtra {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(14, 124, 98);
+    position: absolute;
+    top: 53%;
+    left: 15%;
+    transform: rotate(150deg);
+    opacity:0%;
+}
+
+.manipur {
+    width: 20px;
+    height: 27px;
+    background-color: rgb(162, 85, 62);
+    position: absolute;
+    top: 36%;
+    left: 80%;
+    opacity: 0%;
+}
+
+.meghalaya {
+    width: 50px;
+    height: 12px;
+    background-color: blue;
+    position: absolute;
+    top: 35%;
+    left: 69%;
+    opacity: 0%;
+}
+
+.mizoram {
+    width: 15px;
+    height: 45px;
+    background-color: rgb(121, 49, 96);
+    position: absolute;
+    top: 40%;
+    left: 78%;
+    opacity: 0%;
+}
+
+.nagaland {
+    width: 10px;
+    height: 40px;
+    background-color: rgb(184, 10, 36);
+    position: absolute;
+    top: 30%;
+    left: 83%;
+    transform: rotate(210deg);
+    opacity: 0%;
+}
+
+.odisha {
+    width: 30px;
+    height: 90px;
+    background-color: rgb(9, 27, 26);
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: rotate(230deg);
+    opacity: 0%;
+}
+
+.punjab {
+    width: 35px;
+    height: 40px;
+    background-color: rgb(80, 69, 53);
+    position: absolute;
+    top: 17%;
+    left: 20%;
+    opacity: 0%;
+}
+
+.rajasthan {
+    width: 90px;
+    height: 50px;
+    background-color: rgb(174, 152, 113);
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    opacity: 0%;
+}
+
+.sikkim {
+    width: 10px;
+    height: 12px;
+    background-color: rgb(128, 97, 118);
+    position: absolute;
+    top: 29%;
+    left: 63.5%;
+    opacity: 0%;
+}
+
+.tamil-nadu {
+    width: 40px;
+    height: 70px;
+    background-color: rgb(74, 74, 113);
+    position: absolute;
+    top: 78%;
+    left: 29%;
+    opacity: 0%;
+}
+
+.tripura {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(46, 6, 45);
+    position: absolute;
+    top: 40%;
+    left: 74%;
+    opacity: 0%;
+}
+
+.uttar-pradesh {
+    width: 80px;
+    height: 50px;
+    background-color: rgb(91, 179, 213);
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: rotate(210deg);
+    opacity: 0%;
+}
+
+.uttarakhand {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(103, 12, 48);
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    opacity: 0%;
+}
+
+.west-bengal {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(37, 147, 57);
+    position: absolute;
+    top: 42%;
+    left: 60%;
+    opacity: 0%;
+}
+
+     
+    
+            
+
+        .state {
+            position: absolute;
+            cursor: pointer;
+            fill: rgba(255, 255, 255, 0.5);
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        .state:hover {
+            fill: rgba(255, 255, 0, 0.7);
+        }
+
+        #info-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        fetch("../../header.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("header").innerHTML = data);
+    </script>
+
+    <div class="main-container">
+        <div class="categories-container">
+            <a href="Categories/Cuisine.html" class="box" style="background-image: url('Categories/pic1.jpg');"><h2>Cuisine and Food</h2></a>
+            <a href="Categories/Handicrafts.html" class="box" style="background-image: url('Categories/pic2.jpg');"><h2>Handicrafts and Art</h2></a>
+            <a href="Categories/Clothing.html" class="box" style="background-image: url('Categories/pic3.jpg');"><h2>Textiles and Clothing</h2></a>
+            <a href="Categories/Jewelry.html" class="box" style="background-image: url('Categories/pic4.jpg');"><h2>Traditional Jewelry</h2></a>
+            <a href="Categories/Furniture.html" class="box" style="background-image: url('Categories/pic5.jpg');"><h2>Furniture and Woodwork</h2></a>
+            <a href="Categories/Pottery.html" class="box" style="background-image: url('Categories/pic6.jpg');"><h2>Pottery and Ceramics</h2></a>
+            <a href="Categories/Agricultural products.html" class="box" style="background-image: url('Categories/pic7.jpg');"><h2>Agricultural Products</h2></a>
+            <a href="Categories/Stone.html" class="box" style="background-image: url('Categories/pic8.jpg');"><h2>Stone Carving</h2></a>
+            <a href="Categories/Leather Products.html" class="box" style="background-image: url('Categories/pic9.jpg');"><h2>Leather Products</h2></a>
+            <a href="Categories/Gems.html" class="box" style="background-image: url('Categories/pic10.jpg');"><h2>Minerals and Gems</h2></a>
+        </div>
+
+        <div class="map-container">
+            <div id="india-map">
+                <div id="info-box"></div>
+                <a href="Categories\Map States\Jammu & Kashmir.html" class="jammu-kashmir"></a>
+                <a href="Categories\Map States\Andhra Pradesh.html" class="andhra-pradesh"></a>
+                <a href="Categories\Map States\Arunachal Pradesh.html" class="arunachal-pradesh"></a>
+                <a href="Categories\Map States\Assam.html" class="assam"></a>
+                <a href="Categories\Map States\Bihar.html" class="bihar"></a>
+                <a href="Categories\Map States\Chhattisgarh.html" class="chhattisgarh"></a>
+                <a href="Categories\Map States\Goa.html" class="goa"></a>
+                <a href="Categories\Map States\Gujarat.html" class="gujarat"></a>
+                <a href="Categories\Map States\Haryana.html" class="haryana"></a>
+                <a href="Categories\Map States\Himachal Pradesh.html" class="himachal-pradesh"></a>
+                <a href="Categories\Map States\Jharkhand.html" class="jharkhand"></a>
+                <a href="Categories\Map States\Karnataka.html" class="karnataka"></a>
+                <a href="Categories\Map States\Kerala.html" class="kerala"></a>
+                <a href="Categories\Map States\Madhya Pradesh.html" class="madhya-pradesh"></a>
+                <a href="Categories\Map States\Maharashtra.html" class="maharashtra"></a>
+                <a href="Categories\Map States\Manipur.html" class="manipur"></a>
+                <a href="Categories\Map States\Meghalaya.html" class="meghalaya"></a>
+                <a href="Categories\Map States\Mizoram.html" class="mizoram"></a>
+                <a href="Categories\Map States\Nagaland.html" class="nagaland"></a>
+                <a href="Categories\Map States\Odisha.html" class="odisha"></a>
+                <a href="Categories\Map States\Punjab.html" class="punjab"></a>
+                <a href="Categories\Map States\Rajasthan.html" class="rajasthan"></a>
+                <a href="Categories\Map States\Sikkim.html" class="sikkim"></a>
+                <a href="Categories\Map States\Tamil Nadu.html" class="tamil-nadu"></a>
+                <a href="Categories\Map States\Telangana.html" class="telangana"></a>
+                <a href="Categories\Map States\Tripura.html" class="tripura"></a>
+                <a href="Categories\Map States\Uttar Pradesh.html" class="uttar-pradesh"></a>
+                <a href="Categories\Map States\Uttarakhand.html" class="uttarakhand"></a>
+                <a href="Categories\Map States\West Bengal.html" class="west-bengal"></a>
+                
+                
+            </div>
+        </div>
+    </div>
+  <!-- Load Footer -->
+  <div id="footer"></div>
+  <script>
+      fetch("../../footer.html")
+          .then(response => response.text())
+          .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+    

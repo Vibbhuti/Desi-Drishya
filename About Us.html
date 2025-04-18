@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5EFE0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Adds space between the menu bar and content */
+        #header {
+            margin-bottom: 50px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .map-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden; /* Prevents scrolling */
+            max-height: 100vh; /* Ensures it doesn't exceed screen height */
+            margin-top: 20px;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto; /* Maintains aspect ratio */
+            object-fit: cover; /* Ensures it fills without distortion */
+            display: block;
+        }
+
+        .text-container {
+            flex: 1;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .node {
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+
+        .node strong,
+        .commitment-box strong {
+            text-align: center;
+            display: block;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .node p,
+        .commitment-box p {
+            text-align: justify;
+        }
+
+        /* Updated Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background-color: black;
+            display: block;
+            min-width: 20%;
+        }
+
+        .divider::before {
+            margin-right: 10px;
+        }
+
+        .divider::after {
+            margin-left: 10px;
+        }
+
+        .divider span {
+            width: 20px;
+            height: 4px;
+            background-color: black;
+        }
+
+        .commitment-box {
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .text-container {
+                padding-left: 0;
+            }
+
+            .map-container img {
+                height: auto;
+            }
+        }
+
+        /* Fancy Divider */
+        .fancy-divider {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .fancy-divider::before,
+        .fancy-divider::after {
+            content: "";
+            display: inline-block;
+            width: 30%;
+            height: 2px;
+            background-color: black;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .fancy-divider::before {
+            right: 10px;
+        }
+
+        .fancy-divider::after {
+            left: 10px;
+        }
+
+        .fancy-divider span {
+            display: inline-block;
+            padding: 0 10px;
+            color: black;
+            font-size: 1.2em;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("header").innerHTML = data);
+    </script>
+
+    <div class="content-wrapper">
+        <div class="map-container">
+            <img src="Categories/map.jpg" alt="Map">
+        </div>
+
+        <div class="text-container">
+            <div class="node">
+                <strong>Our Vision</strong>
+                <p>At Desi Drishya, we believe that India's rich heritage and captivating specialties are best experienced through the eyes of those who have ventured beyond the well-trodden paths and uncovered hidden facts and untold stories. We are passionate about sharing these unique perspectives and inviting you to discover the depths of India's cultural tapestry.</p>
+            </div>
+
+            <div class="fancy-divider"><span>*</span></div>
+
+            <div class="node">
+                <strong>Our Mission</strong>
+                <p>Our mission is to curate a visual journey that transcends the ordinary and delves into the heart of India's heritage and specialties.</p>
+            </div>
+
+            <div class="fancy-divider"><span>*</span></div>
+
+            <div class="node">
+                <strong>Our Approach</strong>
+                <p>We combine cutting-edge technology with in-depth cultural research to bring forth an authentic, immersive experience. By collaborating with historians, travelers, and artists, we ensure that every story told is both accurate and engaging.</p>
+            </div>
+
+            <div class="fancy-divider"><span>*</span></div>
+
+            <div class="commitment-box">
+                <strong>Our Commitment</strong>
+                <p>At Desi Drishya, we are committed to preserving and promoting India's cultural legacy through storytelling, immersive experiences, and innovative approaches. Our dedication drives us to continuously explore new ways to engage with our audience and keep India's heritage alive.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script>
+        fetch("../../footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+</body>
+
+</html>

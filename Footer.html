@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Footer Section */
+        .footer-section {
+    margin-top: auto;
+    width: 100%; /* Ensure it spans full width */
+    background: #333;
+    color: white;
+    padding: 1.5% 0;
+    text-align: center;
+    position: relative; /* Prevents it from floating */
+    left: 0;
+    right: 0;
+}
+
+        .footer-section h2 {
+            font-size: 1.3em;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-bottom: 0.8%;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5%;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1.5px;
+            background: white;
+            margin: 0 1.5%;
+        }
+
+        /* Contact Container */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2%;
+            max-width: 75%;
+            margin: 0 auto;
+            padding: 0 1.5%;
+        }
+
+        .contact-box {
+            background: #466199;
+            color: white;
+            padding: 2%; /* Reduced box size */
+            flex: 1;
+            min-width: 25%;
+            max-width: 28%;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-box img {
+            width: 12%; /* Smaller icons */
+            height: auto;
+            margin-bottom: 4%;
+        }
+
+        .contact-box h3 {
+            font-size: 1em; /* Slightly smaller heading */
+            font-weight: bold;
+            margin-bottom: 2%;
+        }
+
+        .contact-box p {
+            font-size: 0.9em; /* Adjusted text size */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .contact-container {
+                max-width: 85%;
+            }
+
+            .contact-box {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-container {
+                flex-direction: column;
+                max-width: 90%;
+            }
+
+            .contact-box {
+                width: 85%;
+                padding: 3%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <h2>Our Contact</h2>
+        <div class="divider">✦</div>
+        <div class="contact-container">
+            <div class="contact-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="Phone Icon">
+                <h3>Call Us</h3>
+                <p>+919873650020</p>
+            </div>
+            <div class="contact-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon">
+                <h3>Write Us</h3>
+                <p>desidrishya@gmail.com</p>
+            </div>
+            <div class="contact-box">
+                <img src="../../Categories/WhatsApp_converted.png" alt="WhatsApp Icon">
+                <h3>WhatsApp Us</h3>
+                <p>+919873650020</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
