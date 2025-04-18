@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian States</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page Layout */
+        body {
+            font-family: Arial, sans-serif;
+            background: #F5EFE0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        #header {
+            width: 100%;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 40px 20px 20px;
+            flex-grow: 1;
+        }
+
+        /* State Boxes */
+        .box {
+            width: 150px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #f0f0f0;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        #footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div class="content-wrapper">
+        <a href="Textiles and Clothing/Andhra Pradesh.html" class="box" style="background-color: #FFDDC1;">Andhra Pradesh</a>
+        <a href="Textiles and Clothing/Arunachal Pradesh.html" class="box" style="background-color: #FFABAB;">Arunachal Pradesh</a>
+        <a href="Textiles and Clothing/Assam.html" class="box" style="background-color: #FFC3A0;">Assam</a>
+        <a href="Textiles and Clothing/Bihar.html" class="box" style="background-color: #D5AAFF;">Bihar</a>
+        <a href="Textiles and Clothing/Chhattisgarh.html" class="box" style="background-color: #85E3FF;">Chhattisgarh</a>
+        <a href="Textiles and Clothing/Goa.html" class="box" style="background-color: #B9FBC0;">Goa</a>
+        <a href="Textiles and Clothing/Gujarat.html" class="box" style="background-color: #B5EAD7;">Gujarat</a>
+        <a href="Textiles and Clothing/Haryana.html" class="box" style="background-color: #FFDAC1;">Haryana</a>
+        <a href="Textiles and Clothing/Himachal Pradesh.html" class="box" style="background-color: #E2F0CB;">Himachal Pradesh</a>
+        <a href="Textiles and Clothing/Jammu and Kashmir.html" class="box" style="background-color: #A2D2FF;">Jammu & Kashmir</a>
+        <a href="Textiles and Clothing/Jharkhand.html" class="box" style="background-color: #A2D2FF;">Jharkhand</a>
+        <a href="Textiles and Clothing/Karnataka.html" class="box" style="background-color: #FFC8DD;">Karnataka</a>
+        <a href="Textiles and Clothing/Kerala.html" class="box" style="background-color: #CDEAC0;">Kerala</a>
+        <a href="Textiles and Clothing/Madhya Pradesh.html" class="box" style="background-color: #FFCBCB;">Madhya Pradesh</a>
+        <a href="Textiles and Clothing/Maharastra.html" class="box" style="background-color: #FFBEBC;">Maharashtra</a>
+        <a href="Textiles and Clothing/Manipur.html" class="box" style="background-color: #C7CEEA;">Manipur</a>
+        <a href="Textiles and Clothing/Meghalaya.html" class="box" style="background-color: #F6EAC2;">Meghalaya</a>
+        <a href="Textiles and Clothing/Mizoram.html" class="box" style="background-color: #E4C1F9;">Mizoram</a>
+        <a href="Textiles and Clothing/Nagaland.html" class="box" style="background-color: #F3CFC6;">Nagaland</a>
+        <a href="Textiles and Clothing/Odisha.html" class="box" style="background-color: #F7D1BA;">Odisha</a>
+        <a href="Textiles and Clothing/Punjab.html" class="box" style="background-color: #A9DEF9;">Punjab</a>
+        <a href="Textiles and Clothing/Rajasthan.html" class="box" style="background-color: #FCB9AA;">Rajasthan</a>
+        <a href="Textiles and Clothing/Sikkim.html" class="box" style="background-color: #D0F4DE;">Sikkim</a>
+        <a href="Textiles and Clothing/Tamil Nadu.html" class="box" style="background-color: #FFDEB4;">Tamil Nadu</a>
+        <a href="Textiles and Clothing/Telangana.html" class="box" style="background-color: #FFB7B2;">Telangana</a>
+        <a href="Textiles and Clothing/Tripura.html" class="box" style="background-color: #A0C4FF;">Tripura</a>
+        <a href="Textiles and Clothing/Uttar Pradesh.html" class="box" style="background-color: #B5EAD7;">Uttar Pradesh</a>
+        <a href="Textiles and Clothing/Uttarakhand.html" class="box" style="background-color: #D4A5A5;">Uttarakhand</a>
+        <a href="Textiles and Clothing/West Bengal.html" class="box" style="background-color: #D3F8E2;">West Bengal</a>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let boxes = document.querySelectorAll(".box");
+            boxes.forEach((box, index) => {
+                setTimeout(() => {
+                    box.classList.add("show");
+                }, index * 100);
+            });
+            VanillaTilt.init(document.querySelectorAll(".box"), {
+                max: 10,
+                speed: 300
+            });
+        });
+
+        fetch("../../Header.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("header").innerHTML = data);
+
+        fetch("../../Footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+
+</body>
+</html>
+
